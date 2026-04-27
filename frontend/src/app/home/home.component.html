@@ -1,0 +1,98 @@
+<div class="min-h-screen relative bg-black">
+  <!-- Physics Layer (Floating Gold Dust) -->
+  <div #scene class="absolute inset-0 z-0 pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-8 py-24">
+    <!-- Navigation Placeholder -->
+    <nav class="flex justify-between items-center mb-32">
+      <div class="text-2xl font-bold gold-gradient tracking-[0.4em] uppercase">Obsidian</div>
+      <div class="flex gap-12 text-[10px] uppercase tracking-[0.3em] text-white/50 font-bold">
+        <a href="#" class="hover:text-white transition-colors">Origins</a>
+        <a href="#" class="hover:text-white transition-colors">The Process</a>
+        <a href="#" class="hover:text-white transition-colors">Membership</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="mb-48 max-w-4xl">
+      <div class="gold-line h-px bg-gradient-to-r from-[#D4AF37] to-transparent mb-12"></div>
+      <h1 class="text-8xl font-bold serif mb-12 leading-tight">
+        The Art of <br>
+        <span class="gold-gradient italic">The Obsidian Roast.</span>
+      </h1>
+      <p class="text-xl text-white/40 leading-relaxed font-light mb-16 max-w-2xl">
+        A symphony of smoke, soil, and spirit. We don't just roast beans; we curate a sensory experience 
+        that transcends the everyday cup.
+      </p>
+      <button class="btn-luxe">Experience the Blend</button>
+    </header>
+
+    <!-- Collection Section -->
+    <section>
+      <div class="flex items-center gap-8 mb-20">
+        <h2 class="text-xs uppercase tracking-[0.5em] text-[#D4AF37] font-bold">The Rare Earth Collection</h2>
+        <div class="flex-grow h-px bg-white/10"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+        @for (roast of roasts(); track roast._id) {
+          <div class="luxe-card group p-10 flex flex-col h-full bg-[#0F0F0F] hover:bg-[#141414]">
+            <div class="relative mb-12 aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-1000">
+              <img [src]="roast.image" [alt]="roast.name" class="w-full h-full object-cover">
+              @if (roast.isFeatured) {
+                <div class="absolute top-0 left-0 bg-[#D4AF37] text-black px-4 py-1 text-[8px] font-black uppercase tracking-widest">
+                  Featured
+                </div>
+              }
+            </div>
+
+            <div class="flex-grow">
+              <h3 class="text-2xl font-bold serif mb-2 group-hover:text-[#D4AF37] transition-colors">{{roast.name}}</h3>
+              <p class="text-[10px] uppercase tracking-widest text-white/30 mb-8 font-bold">{{roast.origin}}</p>
+              
+              <div class="space-y-4 mb-12">
+                <div class="flex flex-wrap gap-2">
+                  @for (note of roast.notes; track note) {
+                    <span class="text-[8px] uppercase tracking-tighter text-white/40 border border-white/5 px-2 py-1">
+                      {{note}}
+                    </span>
+                  }
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[8px] uppercase text-white/20">Intensity</span>
+                  <div class="flex gap-1">
+                    @for (i of [1,2,3,4,5,6,7,8,9,10]; track i) {
+                      <div class="w-1 h-1 rounded-full" [ngClass]="i <= roast.intensity ? 'bg-[#D4AF37]' : 'bg-white/5'"></div>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center pt-8 border-t border-white/5">
+              <span class="text-xl font-serif">${{roast.price.toFixed(2)}}</span>
+              <button class="text-[10px] uppercase tracking-widest font-black text-[#D4AF37] hover:text-white transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-48 text-center">
+      <p class="text-4xl serif italic text-white/20 max-w-4xl mx-auto leading-relaxed">
+        "Coffee is the common man's gold, and like gold, it brings to every person the feeling of luxury and nobility."
+      </p>
+      <div class="w-12 h-px bg-[#D4AF37] mx-auto mt-12"></div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-20 border-t border-white/5 text-center">
+    <div class="text-[8px] uppercase tracking-[0.5em] text-white/20">
+      &copy; 2026 Obsidian Coffee Roasters &mdash; All Rights Reserved
+    </div>
+  </footer>
+</div>

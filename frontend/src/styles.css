@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --coffee-black: #0A0A0A;
+  --coffee-gold: #D4AF37;
+  --coffee-smoke: #F5F5F5;
+  --coffee-bronze: #804A00;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--coffee-black);
+  color: var(--coffee-smoke);
+  overflow-x: hidden;
+}
+
+.serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.gold-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] via-[#FBF5B7] to-[#AA841D];
+}
+
+.luxe-card {
+  @apply bg-[#121212] border border-white/10 rounded-none transition-all duration-700 hover:border-[#D4AF37]/50;
+}
+
+.btn-luxe {
+  @apply px-10 py-4 border border-[#D4AF37] text-[#D4AF37] uppercase tracking-[0.3em] text-xs font-bold transition-all hover:bg-[#D4AF37] hover:text-black active:scale-95;
+}
+
+/* Animations */
+.reveal-up {
+  @apply opacity-0 translate-y-10 transition-all duration-1000;
+}
+
+.reveal-up.active {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--coffee-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--coffee-gold);
+}
