@@ -10,7 +10,7 @@ const MOCK_ROASTS = [
     intensity: 9,
     price: 24.00,
     isFeatured: true,
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&q=80&w=400"
+    image: "/midnight_obsidian.png"
   },
   {
     _id: "2",
@@ -19,7 +19,7 @@ const MOCK_ROASTS = [
     notes: ["Honey", "Jasmine", "Citrus"],
     intensity: 4,
     price: 28.00,
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=400"
+    image: "/golden_hour.png"
   },
   {
     _id: "3",
@@ -28,7 +28,7 @@ const MOCK_ROASTS = [
     notes: ["Caramel", "Toasted Almond", "Vanilla"],
     intensity: 6,
     price: 22.00,
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=400"
+    image: "/velvet_highlands.png"
   },
   {
     _id: "4",
@@ -37,7 +37,7 @@ const MOCK_ROASTS = [
     notes: ["Earth", "Cedar", "Spice"],
     intensity: 8,
     price: 26.00,
-    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&q=80&w=400"
+    image: "/emerald_mist.png"
   }
 ];
 
