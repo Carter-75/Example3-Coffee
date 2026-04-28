@@ -107,7 +107,7 @@ const connectDB = async () => {
     console.error('ERROR: MongoDB Connection Failed:', err.message);
   }
 };
-connectDB();
+// connectDB();
 
 // --- Middlewares ---
 app.use(helmet({
